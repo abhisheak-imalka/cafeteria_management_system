@@ -161,6 +161,7 @@ export default function AdminDasAddEmp() {
             >
               <option>Select the role</option>
               <option value="Manager">Manager</option>
+              <option value="Admin">Admin</option>
             </select>
           </div>
 
