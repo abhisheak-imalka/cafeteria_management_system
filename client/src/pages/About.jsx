@@ -1,11 +1,12 @@
 import React from 'react';
 // Import FontAwesome icons
 import { FaUtensils, FaLeaf, FaHome, FaUsers } from 'react-icons/fa';
+import Header from '../components/Header';
 
 export default function About() {
   return (
     <>
-
+    <Header/>
     <div className="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-100 sm:px-6 lg:px-8">
       <div className="w-full max-w-4xl p-10 space-y-8 bg-white rounded-lg shadow-lg">
         <h2 className="text-3xl font-extrabold text-center text-gray-900">About Us</h2>

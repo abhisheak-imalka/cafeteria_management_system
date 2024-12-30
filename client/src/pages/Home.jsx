@@ -3,6 +3,7 @@ import workoutCover from "../assets/workoutCover.png";
 import membershipCover from "../assets/membershipCover.png";
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
+import Header from "../components/Header";
 
 
 export default function Home() {
@@ -10,7 +11,8 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
   return (
-
+    <>
+    <Header/>
       <div className="w-full h-screen bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./assets/bg13.jpg')] bg-center bg-cover">
             
             <div className="pt-12 text-center">
@@ -43,5 +45,6 @@ export default function Home() {
           
           </div>
         </div>
+        </>
   );
 }

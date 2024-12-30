@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import Toastify from "toastify-js"; 
 import "toastify-js/src/toastify.css"; 
+import Header from "../components/Header";
 
 export default function Item() {
   const [foodItems, setFoodItems] = useState([]);
@@ -99,6 +100,8 @@ export default function Item() {
   const currentUser = user ? JSON.parse(user).currentUser : null;
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen">
       {/* Top bar with "Add Your Item", Cart and Search */}
       <div className="flex items-center justify-between p-4 bg-gray-100">
@@ -179,5 +182,6 @@ export default function Item() {
         </div>
       </div>
     </div>
+    </>
   );
 }

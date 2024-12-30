@@ -28,7 +28,7 @@ import PaymentManager from "./components/PaymentManager.jsx";
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
