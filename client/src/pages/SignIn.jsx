@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import OAuth from '../components/OAuth.jsx';
 import gymImage from '../assets/emplogin.jpg';
+import Header from '../components/Header.jsx';
 
 import {
   signInStart,
@@ -50,6 +51,7 @@ export default function SignIn() {
   return (
 
     <>
+    <Header/>
     <div className='min-h-screen mt-20 bg-gray-100'>
       <div className='flex flex-col max-w-3xl gap-10 p-3 mx-auto md:flex-row md:items-center'>
         
