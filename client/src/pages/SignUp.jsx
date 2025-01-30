@@ -3,7 +3,6 @@ import { Alert, Label, Spinner, TextInput } from 'flowbite-react';
 import { Link, useNavigate } from 'react-router-dom';
 import OAuth from '../components/OAuth.jsx';
 import gymImage from '../assets/signup.jpg';
-import Header from '../components/Header.jsx';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -75,8 +74,7 @@ export default function SignUp() {
 
   return (
     <>
-    <Header/>
-   
+          
     <div className='min-h-screen mt-20 bg-gray-100'> {/* Added background color */}
       <div className="flex flex-col max-w-3xl gap-10 p-3 mx-auto md:flex-row md:items-center">
         {/* left */}

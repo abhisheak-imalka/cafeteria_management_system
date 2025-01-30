@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
@@ -59,7 +58,7 @@ export default function CartPage() {
   return (
 
     <>
-    <Header/>   
+           
     <div>
       <h2>Your Cart</h2>
       {cartItems.length === 0 ? (

@@ -4,7 +4,7 @@ import { Avatar, Button, Dropdown, DropdownDivider, TextInput } from "flowbite-r
 import { signoutSuccess } from "../redux/user/userSlice";
 import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import logo from "../assets/LOGO/4.png";
+import logo from "../assets/4.png";
 
 export default function Header() {
     const path = useLocation().pathname;
@@ -24,13 +24,23 @@ export default function Header() {
 
     const handleSignout = async () => {
         try {
+            // Get userId before clearing
+            const userId = localStorage.getItem('userId');
+    
             const res = await fetch('/api/user/signout', {
                 method: 'POST',
             });
             const data = await res.json();
+            
             if (!res.ok) {
                 console.log(data.message);
             } else {
+                // Clear cart data before clearing user data
+                if (userId) {
+                    localStorage.removeItem(`cart_${userId}`);
+                }
+                
+                // Dispatch signout action and navigate
                 dispatch(signoutSuccess());
                 navigate(`/`);
             }
@@ -48,10 +58,10 @@ export default function Header() {
     };
 
     return (
-        <header className={`border-b-2 border-b-black shadow-md relative bg-gradient-to-r from-[#FFB200] to-[#640D5F]`}>
-            <div className="flex items-center justify-between  mx-auto max-w-7xl">
+        <header className={`border-b-2 border-b-black shadow-md relative bg-gradient-to-r from-[#AC5180] to-[#160121]`}>
+            <div className="flex items-center justify-between p-6 mx-auto max-w-7xl">
                 <Link to="/">
-                    <img src={logo} alt="logo" className="w-60 " />
+                    <img src={logo} alt="logo" className="w-40" />
                 </Link>
                 
 
@@ -68,11 +78,13 @@ export default function Header() {
                             About
                         </li>
                     </Link>
-                    <Link to="/item">
-                        <li className="hidden sm:inline text-[#D4D4D4] hover:underline hover:underline-offset-4 hover:text-white">
-                            Item
-                        </li>
-                    </Link>
+                    {!(currentUser?.role === "Manager" || currentUser?.isAdmin) && (
+        <Link to="/item">
+            <li className="hidden sm:inline text-[#D4D4D4] hover:underline hover:underline-offset-4 hover:text-white">
+                Item
+            </li>
+        </Link>
+    )}
                 </ul>
 
                 <div className='flex gap-4'> {/* Sign-in dropdown or button */}

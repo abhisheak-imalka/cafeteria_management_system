@@ -18,7 +18,6 @@ export default function Dashboard() {
 
   return (
     <>
-    <Header/>
       <div className="flex flex-col min-h-screen text-white md:flex-row">
         <div className="md:w-56">
           {/* sidebae */}

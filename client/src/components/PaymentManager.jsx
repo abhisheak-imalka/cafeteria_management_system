@@ -304,14 +304,14 @@ const PaymentManager = () => {
         {/* Button to Generate PDF */}
         <button
           onClick={generatePDF}
-          className="mb-4 px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-700"
+          className="px-4 py-2 mb-4 text-white bg-green-500 rounded-md hover:bg-green-700"
         >
           Complete dPayments
         </button>
 
         <button 
           onClick={UncompletePayments}
-          className="m-5 mb-4 px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-700"
+          className="px-4 py-2 m-5 mb-4 text-white bg-green-500 rounded-md hover:bg-green-700"
         >
         Unompleted Payments
         </button>
@@ -339,7 +339,7 @@ const PaymentManager = () => {
               Search
             </button>
           </div>
-          {error && <p className="text-red-500 mt-2">{error}</p>}
+          {error && <p className="mt-2 text-red-500">{error}</p>}
         </form>
 
         {/* Search Result */}
@@ -403,13 +403,13 @@ const PaymentManager = () => {
                       : "User info not available"}
                   </td>
                   <td className="p-2 text-center border border-gray-300">
-                    ${payment.totalPrice?.toFixed(2)}
+                    LKR {payment.totalPrice?.toFixed(2)}
                   </td>
                   <td className="p-2 border border-gray-300">
                     <ul>
                       {payment.cartItems?.map((item, index) => (
                         <li key={index}>
-                          {item.foodName} - {item.quantity} x $
+                          {item.foodName} - {item.quantity} x LKR 
                           {item.price?.toFixed(2)}
                         </li>
                       )) || <li>No items available</li>}

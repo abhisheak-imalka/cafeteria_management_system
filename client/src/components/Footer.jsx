@@ -1,27 +1,19 @@
 import { Footer as FlowbiteFooter } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
-import logo from "../assets/LOGO/footer logo.png";
-import logo2 from "../assets/LOGO/pepsi.png";
-import logo3 from "../assets/LOGO/redbull.png";
-import logo4 from "../assets/LOGO/nestle.png";
-
 
 export default function Footer() {
   return (
-    <FlowbiteFooter container className="border-b-2 border-b-black shadow-md relative bg-gradient-to-r from-[#FFB200] to-[#640D5F]">
-  <div className="w-full max-w-screen-xl mx-auto px-0 py-0 lg:py-0">
-    <div className="md:flex md:justify-between">
-      <div className="mb-6">
-        <Link to="/">
-          <img src={logo} alt="logo" className="w-60 m-0 p-0" />
-        </Link>
-      </div>
-      <div className="flex space-x-4 items-center">
-        <img src={logo2} alt="logo2" className="w-20 m-0 p-0" />
-        <img src={logo3} alt="logo3" className="w-25 m-0 p-0" />
-        <img src={logo4} alt="logo4" className="w-25 m-0 p-0" />
-      </div>
+    <FlowbiteFooter container className="text-white bg-gradient-to-r from-[#AC5180] to-[#160121]">
+      <div className="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
+        <div className="md:flex md:justify-between">
+          <div className="mb-6 md:mb-0">
+            <Link to="/" className="flex items-center">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap">
+                Food and Restaurant
+              </span>
+            </Link>
+          </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <h2 className="mb-6 text-sm font-semibold uppercase">About</h2>
